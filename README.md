@@ -45,7 +45,7 @@ tkinter zit vaak al in Raspberry Pi OS. Als het ontbreekt:
 sudo apt install -y python3-tk
 ```
 
-📂 Projectstructuur
+## 📂 Projectstructuur
 Bijvoorbeeld:
 
 arduino
@@ -62,7 +62,7 @@ source venv/bin/activate
 python main.py
 ```
 
-⚙️ Automatisch starten bij boot (systemd)
+## ⚙️ Automatisch starten bij boot (systemd)
 Maak een systemd-service zodat de app automatisch start als de Pi opstart.
 
 Maak een nieuw service-bestand:
