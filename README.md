@@ -13,34 +13,38 @@ Zorg dat je **Raspberry Pi OS (64-bit)** draait en je systeem up-to-date is:
 
 ```bash
 sudo apt update && sudo apt upgrade -y
-2. Systeemdependencies
+```
+### 2. Systeemdependencies
 Installeer pakketten die nodig zijn voor audio en Python:
 
-bash
-Code kopiëren
+```bash
 sudo apt install -y python3 python3-pip python3-venv portaudio19-dev
-3. Project installeren
+```
+
+### 3. Project installeren
 Clone je project of kopieer het naar de Pi en ga naar de map:
 
-bash
+```bash
 Code kopiëren
 git clone https://github.com/<jouw-repo>.git
 cd <jouw-repo>
 Maak een virtual environment en installeer dependencies:
+```
 
-bash
-Code kopiëren
+```bash
 python3 -m venv venv
 source venv/bin/activate
 pip install --upgrade pip
 pip install tkinter sounddevice numpy openai-whisper requests
-ℹ️ Let op:
+```
 
+ℹ️ Let op:
 tkinter zit vaak al in Raspberry Pi OS. Als het ontbreekt:
 
-bash
-Code kopiëren
+```bash
 sudo apt install -y python3-tk
+```
+
 📂 Projectstructuur
 Bijvoorbeeld:
 
@@ -53,22 +57,23 @@ mijn_project/
 ▶️ Starten van de applicatie
 Activeer je venv en run de app handmatig:
 
-bash
-Code kopiëren
+```bash
 source venv/bin/activate
 python main.py
+```
+
 ⚙️ Automatisch starten bij boot (systemd)
 Maak een systemd-service zodat de app automatisch start als de Pi opstart.
 
 Maak een nieuw service-bestand:
 
-bash
-Code kopiëren
+```bash
 sudo nano /etc/systemd/system/ai-assistant.service
+```
+
 Voeg dit toe:
 
-ini
-Code kopiëren
+```ini
 [Unit]
 Description=AI Assistant
 After=network.target sound.target
@@ -81,17 +86,19 @@ User=pi
 
 [Install]
 WantedBy=multi-user.target
-Let op: pas /home/pi/mijn_project/ aan naar de locatie van jouw projectmap.
+```
 
+Let op: pas /home/pi/mijn_project/ aan naar de locatie van jouw projectmap.
 Activeer de service:
 
-bash
-Code kopiëren
+```bash
 sudo systemctl daemon-reload
 sudo systemctl enable ai-assistant
 sudo systemctl start ai-assistant
+```
+
 Check of het werkt:
 
-bash
-Code kopiëren
+```bash
 systemctl status ai-assistant
+```
