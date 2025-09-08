@@ -25,11 +25,10 @@ sudo apt install -y python3 python3-pip python3-venv portaudio19-dev
 Clone je project of kopieer het naar de Pi en ga naar de map:
 
 ```bash
-Code kopiëren
 git clone https://github.com/<jouw-repo>.git
 cd <jouw-repo>
-Maak een virtual environment en installeer dependencies:
 ```
+Maak een virtual environment en installeer dependencies:
 
 ```bash
 python3 -m venv venv
@@ -49,11 +48,13 @@ sudo apt install -y python3-tk
 Bijvoorbeeld:
 
 arduino
-Code kopiëren
+```
 mijn_project/
 │── main.py
 │── run.sh
 │── requirements.txt
+```
+
 ▶️ Starten van de applicatie
 Activeer je venv en run de app handmatig:
 
@@ -102,3 +103,4 @@ Check of het werkt:
 ```bash
 systemctl status ai-assistant
 ```
+
