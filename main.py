@@ -5,11 +5,15 @@ import whisper
 import requests
 import json
 
-def record_audio(seconds=5, samplerate=16000):
-    print(f"Recording {seconds} seconds...")
-    audio = sd.rec(int(seconds * samplerate), samplerate=samplerate, channels=1, dtype='float32')
+def record_audio(seconds=5, samplerate=None):
+    if samplerate is None:
+        samplerate = int(sd.query_devices(kind="input")["default_samplerate"])
+    print(f"Recording {seconds} seconds at {samplerate} Hz...")
+    audio = sd.rec(int(seconds * samplerate), samplerate=samplerate,
+                   channels=1, dtype='float32')
     sd.wait()
     return np.squeeze(audio)
+
 
 def speech_to_text():
     audio = record_audio()
