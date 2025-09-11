@@ -1,0 +1,50 @@
+{
+  "topic": "Heembouw",
+  "entries": [
+    {
+      "field": "about",
+      "value": "Heembouw is a 'ontwerpende bouwer' (designing builder) with its own architectural firm. It integrates design, development, realization, and maintenance in a single team to create sustainable and future-proof buildings for commercial properties, offices, and residential projects.",
+      "aliases": ["what is Heembouw", "ontwerpende bouwer", "designing builder"]
+    },
+    {
+      "field": "offices",
+      "value": "Heembouw operates from offices in Roelofarendsveen (headquarters), Breda (Heembouw Bedrijfsruimten Zuid) and Berkel en Rodenrijs (Heembouw Kantoren).",
+      "aliases": ["offices", "locations", "where are the offices", "Breda office", "Berkel office"]
+    },
+    {
+      "field": "customer_groups",
+      "value": "Heembouw focuses on three end-user groups: commercial property (Bedrijfsruimten), offices (Kantoren), and living (Wonen).",
+      "aliases": ["customer groups", "focus areas", "customer segments"]
+    },
+    {
+      "field": "sustainability",
+      "value": "Heembouw emphasizes sustainable building with circular, biobased, and nature-inclusive solutions, selecting materials and design approaches that balance people, nature, and function.",
+      "aliases": ["sustainability", "duurzaamheid", "green building"]
+    },
+    {
+      "field": "employee_count",
+      "value": "Heembouw employs over 300 professionals.",
+      "aliases": ["employees", "staff", "how many employees"]
+    },
+    {
+      "field": "history",
+      "value": "Founded in 1939 as Van Berkel en zonen in Roelofarendsveen, it became Heembouw in 1973 under Ruud van Berkel. Since 1994 it expanded regionally, and in 1996 founded its own architectural firm, launching the “designing builder” concept.",
+      "aliases": ["history", "founded", "established", "founding"]
+    },
+    {
+      "field": "relocations",
+      "value": "In June 2020, Heembouw Bedrijfsruimten Zuid moved into the innovative 'De Rithmeester' building in Breda's Rithmeesterpark.",
+      "aliases": ["relocated", "moved", "new office Breda"]
+    },
+    {
+      "field": "client_satisfaction",
+      "value": "Heembouw achieves high customer satisfaction scores and is recognized as the best employer in the Dutch construction sector and in the Netherlands.",
+      "aliases": ["customer satisfaction", "employer award", "best employer"]
+    },
+    {
+      "field": "website",
+      "value": "https://www.heembouw.nl/",
+      "aliases": ["official site", "homepage", "website"]
+    }
+  ]
+}
