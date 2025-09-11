@@ -6,28 +6,34 @@ import requests
 import json
 import platform
 
-# Default device
-mic_index = 1  # standaard voor andere systemen
+# # Default device
+# mic_index = 1  # standaard voor andere systemen
+#
+# # Check of Raspberry Pi OS
+# try:
+#     with open("/etc/os-release") as f:
+#         os_info = f.read()
+#         if "raspbian" in os_info.lower() or "debian" in os_info.lower():
+#             mic_index = 2  # Raspberry Pi microfoon index
+# except FileNotFoundError:
+#     pass  # bestand niet gevonden → niet op Pi
+#
+# # Zet de default input device
+# sd.default.device = (None, mic_index)
+#
+# print(f"Gebruik microfoon met index {mic_index}")
+# def record_audio(seconds=5, samplerate=None):
+#     if samplerate is None:
+#         samplerate = int(sd.query_devices(kind="input")["default_samplerate"])
+#     print(f"Recording {seconds} seconds at {samplerate} Hz...")
+#     audio = sd.rec(int(seconds * samplerate), samplerate=samplerate,
+#                    channels=1, dtype='float32')
+#     sd.wait()
+#     return np.squeeze(audio)
 
-# Check of Raspberry Pi OS
-try:
-    with open("/etc/os-release") as f:
-        os_info = f.read()
-        if "raspbian" in os_info.lower() or "debian" in os_info.lower():
-            mic_index = 2  # Raspberry Pi microfoon index
-except FileNotFoundError:
-    pass  # bestand niet gevonden → niet op Pi
-
-# Zet de default input device
-sd.default.device = (None, mic_index)
-
-print(f"Gebruik microfoon met index {mic_index}")
-def record_audio(seconds=5, samplerate=None):
-    if samplerate is None:
-        samplerate = int(sd.query_devices(kind="input")["default_samplerate"])
-    print(f"Recording {seconds} seconds at {samplerate} Hz...")
-    audio = sd.rec(int(seconds * samplerate), samplerate=samplerate,
-                   channels=1, dtype='float32')
+def record_audio(seconds=5, samplerate=16000):
+    print(f"Recording {seconds} seconds...")
+    audio = sd.rec(int(seconds * samplerate), samplerate=samplerate, channels=1, dtype='float32')
     sd.wait()
     return np.squeeze(audio)
 
