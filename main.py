@@ -31,12 +31,20 @@ import platform
 #     sd.wait()
 #     return np.squeeze(audio)
 
-def record_audio(seconds=5, samplerate=16000):
-    print(f"Recording {seconds} seconds...")
+from scipy.signal import resample
+
+def record_audio(seconds=5, samplerate=44100):
+    print(f"Recording {seconds} seconds at {samplerate} Hz...")
     audio = sd.rec(int(seconds * samplerate), samplerate=samplerate, channels=1, dtype='float32')
     sd.wait()
-    return np.squeeze(audio)
+    audio = np.squeeze(audio)
 
+    # Resample naar 16000 Hz
+    target_sr = 16000
+    num_samples = int(len(audio) * target_sr / samplerate)
+    audio_resampled = resample(audio, num_samples)
+
+    return audio_resampled
 
 def speech_to_text():
     audio = record_audio()
