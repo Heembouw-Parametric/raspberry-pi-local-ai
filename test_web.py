@@ -6,7 +6,6 @@ def request_llm(vraag: str) -> str:
     url = "https://api.openai.com/v1/chat/completions"
     headers = {
         "Content-Type": "application/json",
-        "Authorization": "Bearer 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"
     }
 
     data = {
